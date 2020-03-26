@@ -31,7 +31,14 @@ class Matrix {
             rows(rows),
             cols(cols), 
             data(rows * cols) {
-        }
+        } 
+
+	//Rule of Five
+	~Matrix() = default;
+	Matrix(const Matrix& m) = default;
+	Matrix& operator=(const Matrix& m) = default;
+	Matrix(Matrix&& m)  = default;
+	Matrix& operator=(Matrix&& m) = default;
 
         size_t nRows() const {
             return this->rows;
